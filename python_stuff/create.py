@@ -5,3 +5,6 @@ def createPeople(extraValue):
 print ("The names of the people participating are: ")
 createPeople("Mario")
 createPeople("Mother")
+createPeople("Marth")
+
+
