@@ -8,7 +8,7 @@
 #include <cstring>
 
 using namespace std;
-
+//helloworld
 void randomize(string &lttraray){
 	int randnum = rand() % 4 + 1;
 
