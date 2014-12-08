@@ -14,7 +14,7 @@ function err_exit { echo -e 1>&2; exit 1; }
 if [ $# -ne 2 ]; then
   echo -e "\n Usage error!"
   echo " This script requires two arguments:"
-  echo " 1. mail to (e.g. to@example.com)"
+  echo " 2. mail to (e.g. to@example.com)"
   echo " 2. mail from (e.g. from@example.com)"
   exit 1
 fi

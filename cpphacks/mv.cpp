@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <dirent.h>
-
+#include <stdio.h>
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -26,13 +26,15 @@ int main(int argc, char *argv[])
                 perror("unlinkfile");
         }
 
-        else if((S_ISDIR(statbuf.st_mode)))
+        else if(statbuf.st_mode & S_IFDIR)
         {
-            string path = argv[2] + '/';
+            string path = argv[2];
+            path[path.length() -1 ] = '/';
             path += argv[1];
-            if(link(argv[1], path.c_str() )== -1){
+            path += '\0';
+
+            if((link(argv[1], path.c_str() )== -1)){
 		perror("linkdir");
-                return 1;
 	}
 
             if(unlink(argv[1])==-1)
